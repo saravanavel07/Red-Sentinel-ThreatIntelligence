@@ -1,0 +1,44 @@
+{
+  "scenarios": [
+    {
+      "id": "scenario_brute_force_compromise",
+      "name": "Credential Stuffing to Account Takeover",
+      "mitre_technique": "T1110.001 / T1078",
+      "severity": "CRITICAL",
+      "description": "Simulates 5 rapid failed authentication attempts followed immediately by a successful sign-in from an unknown geographic IP.",
+      "target_account": "c.finch@acme-corp.cloud",
+      "event_count": 6,
+      "expected_rules": ["RS-AUTH-001", "RS-AUTH-002"]
+    },
+    {
+      "id": "scenario_privilege_escalation_burst",
+      "name": "Cloud IAM Privilege Escalation & Persistence",
+      "mitre_technique": "T1098 / T1078.004",
+      "severity": "HIGH",
+      "description": "Simulates attachment of AdministratorAccess policy to a standard identity followed immediately by AWS access key creation.",
+      "target_account": "dev-deployer-svc",
+      "event_count": 3,
+      "expected_rules": ["RS-IAM-003", "RS-CORR-006"]
+    },
+    {
+      "id": "scenario_recon_burst",
+      "name": "Automated Port & API Reconnaissance Burst",
+      "mitre_technique": "T1499 / T1595",
+      "severity": "HIGH",
+      "description": "Simulates 18 telemetry calls within 40 seconds probing internal API endpoints from an external IP.",
+      "target_account": "anonymous-prober",
+      "event_count": 18,
+      "expected_rules": ["RS-VOL-005"]
+    },
+    {
+      "id": "scenario_off_hours_infrastructure_tamper",
+      "name": "Off-Hours Security Group Ingress 0.0.0.0/0",
+      "mitre_technique": "T1562.007",
+      "severity": "MEDIUM",
+      "description": "Opens SSH port 22 to worldwide CIDR range at 03:15 UTC outside business maintenance windows.",
+      "target_account": "sec-contractor-temp",
+      "event_count": 2,
+      "expected_rules": ["RS-TIME-004"]
+    }
+  ]
+}

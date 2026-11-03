@@ -1,0 +1,145 @@
+[
+  {
+    "event_id": "EVT-2026-8801",
+    "timestamp": "2026-11-02T19:40:12Z",
+    "event_type": "auth.failure",
+    "source_type": "aws-cloudtrail",
+    "account": "j.anderson@acme-defense.internal",
+    "host": "prod-auth-gateway-01",
+    "source_ip": "198.51.100.44",
+    "severity": "LOW",
+    "raw_event": {
+      "eventName": "ConsoleLogin",
+      "sourceIPAddress": "198.51.100.44",
+      "errorMessage": "Failed authentication token mismatch",
+      "userIdentity": { "userName": "j.anderson@acme-defense.internal" }
+    }
+  },
+  {
+    "event_id": "EVT-2026-8802",
+    "timestamp": "2026-11-02T19:40:45Z",
+    "event_type": "auth.failure",
+    "source_type": "aws-cloudtrail",
+    "account": "j.anderson@acme-defense.internal",
+    "host": "prod-auth-gateway-01",
+    "source_ip": "198.51.100.44",
+    "severity": "LOW",
+    "raw_event": {
+      "eventName": "ConsoleLogin",
+      "sourceIPAddress": "198.51.100.44",
+      "errorMessage": "Invalid password submitted"
+    }
+  },
+  {
+    "event_id": "EVT-2026-8803",
+    "timestamp": "2026-11-02T19:41:20Z",
+    "event_type": "auth.failure",
+    "source_type": "aws-cloudtrail",
+    "account": "j.anderson@acme-defense.internal",
+    "host": "prod-auth-gateway-01",
+    "source_ip": "198.51.100.44",
+    "severity": "LOW",
+    "raw_event": {
+      "eventName": "ConsoleLogin",
+      "sourceIPAddress": "198.51.100.44",
+      "errorMessage": "Invalid MFA passcode"
+    }
+  },
+  {
+    "event_id": "EVT-2026-8804",
+    "timestamp": "2026-11-02T19:42:01Z",
+    "event_type": "auth.failure",
+    "source_type": "aws-cloudtrail",
+    "account": "j.anderson@acme-defense.internal",
+    "host": "prod-auth-gateway-01",
+    "source_ip": "198.51.100.44",
+    "severity": "LOW",
+    "raw_event": {
+      "eventName": "ConsoleLogin",
+      "sourceIPAddress": "198.51.100.44",
+      "errorMessage": "Bad credential hash"
+    }
+  },
+  {
+    "event_id": "EVT-2026-8805",
+    "timestamp": "2026-11-02T19:42:35Z",
+    "event_type": "auth.failure",
+    "source_type": "aws-cloudtrail",
+    "account": "j.anderson@acme-defense.internal",
+    "host": "prod-auth-gateway-01",
+    "source_ip": "198.51.100.44",
+    "severity": "LOW",
+    "raw_event": {
+      "eventName": "ConsoleLogin",
+      "sourceIPAddress": "198.51.100.44",
+      "errorMessage": "Password retry limit approaching"
+    }
+  },
+  {
+    "event_id": "EVT-2026-8806",
+    "timestamp": "2026-11-02T19:43:10Z",
+    "event_type": "auth.success",
+    "source_type": "aws-cloudtrail",
+    "account": "j.anderson@acme-defense.internal",
+    "host": "prod-auth-gateway-01",
+    "source_ip": "198.51.100.44",
+    "severity": "INFO",
+    "raw_event": {
+      "eventName": "ConsoleLogin",
+      "sourceIPAddress": "198.51.100.44",
+      "responseElements": { "status": "Success" }
+    }
+  },
+  {
+    "event_id": "EVT-2026-8807",
+    "timestamp": "2026-11-02T19:44:02Z",
+    "event_type": "iam.privilege_escalation",
+    "source_type": "aws-cloudtrail",
+    "account": "j.anderson@acme-defense.internal",
+    "host": "iam.amazonaws.com",
+    "source_ip": "198.51.100.44",
+    "severity": "HIGH",
+    "raw_event": {
+      "eventName": "AttachUserPolicy",
+      "requestParameters": {
+        "policyArn": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "userName": "j.anderson@acme-defense.internal"
+      }
+    }
+  },
+  {
+    "event_id": "EVT-2026-8808",
+    "timestamp": "2026-11-02T19:44:40Z",
+    "event_type": "iam.key_created",
+    "source_type": "aws-cloudtrail",
+    "account": "j.anderson@acme-defense.internal",
+    "host": "iam.amazonaws.com",
+    "source_ip": "198.51.100.44",
+    "severity": "HIGH",
+    "raw_event": {
+      "eventName": "CreateAccessKey",
+      "responseElements": {
+        "accessKey": { "accessKeyId": "AKIAIOSFODNN7EXAMPLE" }
+      }
+    }
+  },
+  {
+    "event_id": "EVT-2026-8809",
+    "timestamp": "2026-11-02T19:45:15Z",
+    "event_type": "cloud.security_group_opened",
+    "source_type": "aws-cloudtrail",
+    "account": "j.anderson@acme-defense.internal",
+    "host": "ec2.us-east-1.amazonaws.com",
+    "source_ip": "198.51.100.44",
+    "severity": "HIGH",
+    "raw_event": {
+      "eventName": "AuthorizeSecurityGroupIngress",
+      "requestParameters": {
+        "groupId": "sg-01a2b3c4d5e6f7g8",
+        "ipPermissions": [
+          { "ipProtocol": "tcp", "fromPort": 22, "toPort": 22, "ipRanges": [{ "cidrIp": "0.0.0.0/0" }] }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,25 @@
+# RedSentinel Platform Dependencies
+# Core Web Framework
+django>=4.2.10,<5.1.0
+djangorestframework>=3.14.0
+django-cors-headers>=4.3.1
+
+# Event Ingestion Microservice
+flask>=3.0.2
+flask-cors>=4.0.0
+pydantic>=2.6.3
+
+# AI & Orchestration
+langgraph>=0.0.26
+langchain-core>=0.1.28
+google-genai>=0.1.1
+
+# Security & Utilities
+python-dotenv>=1.0.1
+requests>=2.31.0
+cryptography>=42.0.5
+
+# Testing & Quality
+pytest>=8.0.2
+pytest-django>=4.8.0
+flake8>=7.0.0
