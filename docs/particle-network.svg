@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">RedSentinel animated particle network</title>
+  <desc id="desc">A dark security operations visualization with softly glowing red particles drifting through a connected network. Decorative animation only, not live telemetry.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="85%"><stop offset="0" stop-color="#17121a"/><stop offset="1" stop-color="#090B10"/></radialGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff334f" stop-opacity=".32"/><stop offset="1" stop-color="#8590a3" stop-opacity=".08"/></linearGradient>
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#8791a3" stroke-opacity=".055" stroke-width="1"/></pattern>
+    <style>
+      .drift { animation: drift 12s ease-in-out infinite alternate; }
+      .drift2 { animation: drift 15s ease-in-out -5s infinite alternate; }
+      .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.8s ease-in-out infinite; }
+      .flow { stroke-dasharray: 4 14; animation: flow 8s linear infinite; }
+      @keyframes drift { from { transform: translate(-12px, 8px); } to { transform: translate(18px, -12px); } }
+      @keyframes pulse { 0%,100% { opacity: .45; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.35); } }
+      @keyframes flow { to { stroke-dashoffset: -72; } }
+      @media (prefers-reduced-motion: reduce) { .drift,.drift2,.pulse,.flow { animation: none !important; } }
+    </style>
+  </defs>
+  <rect width="1200" height="420" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="420" rx="24" fill="url(#grid)"/>
+  <g fill="none" stroke="url(#line)" stroke-width="1.5">
+    <path d="M90 100 230 175 360 95 510 155 655 85 810 160 950 90 1100 155"/><path d="M90 300 230 175 350 325 510 155 635 310 810 160 940 315 1100 155"/><path d="M90 100 110 230 90 300M360 95 350 215 350 325M655 85 635 205 635 310M950 90 940 210 940 315"/>
+  </g>
+  <g fill="none" stroke="#ff5268" stroke-opacity=".27" stroke-width="2" class="flow"><path d="M90 100 230 175 360 95 510 155 655 85 810 160 950 90 1100 155"/></g>
+  <g class="drift" fill="#ff5268" filter="url(#glow)">
+    <circle cx="90" cy="100" r="3"/><circle cx="230" cy="175" r="4"/><circle cx="360" cy="95" r="3"/><circle cx="510" cy="155" r="5"/><circle cx="655" cy="85" r="3"/><circle cx="810" cy="160" r="4"/><circle cx="950" cy="90" r="3"/><circle cx="1100" cy="155" r="4"/>
+  </g>
+  <g class="drift2" fill="#b9c2d0" opacity=".8">
+    <circle cx="110" cy="230" r="2"/><circle cx="350" cy="215" r="2.5"/><circle cx="635" cy="205" r="2"/><circle cx="940" cy="210" r="2.5"/><circle cx="350" cy="325" r="2"/><circle cx="635" cy="310" r="2"/><circle cx="940" cy="315" r="2"/>
+  </g>
+  <g fill="#ff334f" filter="url(#glow)"><circle class="pulse" cx="230" cy="175" r="7"/><circle class="pulse" cx="810" cy="160" r="7" style="animation-delay:-1.3s"/><circle class="pulse" cx="510" cy="155" r="8" style="animation-delay:-.7s"/></g>
+  <g font-family="Arial, sans-serif"><text x="52" y="52" fill="#ff5268" font-size="13" font-weight="700" letter-spacing="3">REDSENTINEL  /  SECURITY SIGNAL NETWORK</text><text x="52" y="390" fill="#9aa4b4" font-size="12" letter-spacing="1.2">AMBIENT MOTION VISUALIZATION · NOT LIVE TELEMETRY</text></g>
+</svg>
